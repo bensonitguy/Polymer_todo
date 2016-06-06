@@ -1,0 +1,95 @@
+
+<link href="../bower_components/polymer/polymer.html" rel="import">
+	<link href="../bower_components/paper-checkbox/paper-checkbox.html" rel="import">
+	<link rel="import" href="../bower_components/paper-item/paper-item.html">
+	<link href="../bower_components/paper-input/paper-input.html" rel="import">
+	<link href="../bower_components/paper-material/paper-material.html" rel="import">
+	<link href="../bower_components/iron-icons/iron-icons.html" rel="import">
+	<link href="../bower_components/paper-fab/paper-fab.html" rel="import">
+	<link href="../bower_components/paper-drawer-panel/paper-drawer-panel.html" rel="import">
+	<link rel="stylesheet" type="text/css" href="todo-app.css">
+	<!--	<link rel="stylesheet" href="../css/icons.css">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/lean-slider.css" type="text/css" /> -->
+
+
+	<dom-module id="todo-element">
+
+		<style>
+		paper-material {
+			height: 10%;
+			margin: 20px;
+		}
+
+		paper-item {
+		 margin: 0px;
+		 height: 100%;
+		 width: 21%;
+		}
+
+		iron-icon{
+		 align-content: center;
+		}
+
+		iron-label{
+		 text-align: center;
+		padding: 20px;
+		font-size: 20px;
+		font-family: 'Roboto', 'Noto', sans-serif;
+		letter-spacing: 2px;
+		font-weight: 100;
+		}
+
+		#leftDrawer {
+
+		 margin: 0;
+		 padding: 20px;
+		 width:100%;
+		 color:white;
+		 background-color: #27C3BB;
+		}
+
+		#rightDrawer
+		{
+		 margin: 0;
+		 padding: 20px;
+		 width:100%;
+		 color:white;
+		 background-color: #f84c58;
+		}
+
+		</style>
+			<template>
+        <paper-material elevation = 2>
+					<paper-drawer-panel id="paperDrawerPanel" force-narrow>
+						<div drawer left-drawer id="leftDrawer">
+						<iron-label>Completed</iron-label>
+
+						</div>
+						<paper-drawer-panel main right-drawer>
+							<div drawer right-drawer  id="rightDrawer">
+									<iron-label>Delete	</iron-label>
+							</div>
+							<div main> </div>
+
+						</paper-drawer-panel>
+						<div main right-drawer >
+							<div drawer right-drawer>
+								<paper-item>Todo Item	</paper-item>
+
+							</div>
+						</div>
+
+				</paper-drawer-panel>
+			</paper-material>
+
+
+		</template>
+		<script>
+		Polymer({
+			is : "todo-element"
+		});
+		</script>
+	</dom-module>

@@ -1,0 +1,75 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="todo-element.html">
+
+
+
+<dom-module id="my-todoapp">
+  <template>
+  	<style>
+
+    paper-header-panel {
+        height: 100%;
+      }
+      paper-material {
+        border-radius: 2px;
+        height: 30%;
+        padding: 20px;
+        width: 90% auto;
+        margin: 20px;
+        background: white;
+      }
+      paper-input {
+        margin: 20px 20px 20px 5px;
+        width: calc(80% + 10px);
+
+      }
+      paper-fab {
+        float:right;
+      }
+
+  	</style>
+
+    <!-- Main Area -->
+    <paper-header-panel>
+
+      <!-- Main Toolbar -->
+      <paper-toolbar>
+        <paper-icon-button icon="menu" on-tap="menuAction"></paper-icon-button>
+          <div class="title">Todo App</div>
+      </paper-toolbar>
+
+      <!-- Main Content -->
+      <paper-material class="content" elevation="2">
+        <paper-input label="Enter Todo Item"></paper-input>
+        <paper-fab icon="add" right></paper-fab>
+      </paper-material>
+    </paper-header-panel>
+
+
+
+
+    </template>
+
+  <script>
+
+  Polymer({
+    is : "my-todoapp" ,
+    properties : {
+      name :{
+        type : String ,
+        value : "Benson",
+        notify : true
+      }
+
+    }
+  });
+  </script>
+</dom-module>
