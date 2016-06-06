@@ -8,6 +8,7 @@
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="todo-element.html">
+<link rel="import" href="todo-popup.html">
 
 
 
@@ -42,16 +43,20 @@
 
       <!-- Main Toolbar -->
       <paper-toolbar>
-        <paper-icon-button icon="menu" on-tap="menuAction"></paper-icon-button>
+        <paper-icon-button icon="menu" ></paper-icon-button>
           <div class="title">Todo App</div>
       </paper-toolbar>
 
       <!-- Main Content -->
       <paper-material class="content" elevation="2">
         <paper-input label="Enter Todo Item"></paper-input>
-        <paper-fab icon="add" right></paper-fab>
+        <paper-fab icon="add" right on-tap="saveTodo"></paper-fab>
+      <!--  <todo-popup id="backdrop" with-backdrop tabindex=-1 no-cancel-on-outside-click></todo-popup> -->
       </paper-material>
+
+
     </paper-header-panel>
+
 
 
 
@@ -68,6 +73,17 @@
         value : "Benson",
         notify : true
       }
+
+    },
+    saveTodo : function()
+    {
+    	var todopopup = new TodoPopup();
+      var telement = document.getElementsByClassName('content')[0];
+      todopopup.setAttribute('with-backdrop','');
+      todopopup.setAttribute('tabindex',-1);
+      todopopup.setAttribute('no-cancel-on-outside-click','');
+      telement.appendChild(todopopup);
+      todopopup.open();
 
     }
   });
